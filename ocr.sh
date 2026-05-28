@@ -10,7 +10,24 @@
 #    ./ocr.sh --cleanup              Remove temp files
 # ─────────────────────────────────────────────────────
 
+# Check if running on macOS
+if [ "$(uname)" != "Darwin" ]; then
+    echo "⚠️ Warning: This tool is designed for macOS and might not work correctly on other operating systems."
+fi
+
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# Check if Homebrew is installed
+if ! command -v brew &> /dev/null; then
+    echo "❌ Homebrew is not installed on this Mac."
+    echo "   Homebrew is required to install dependencies like the Google Cloud CLI."
+    echo "   To install Homebrew, copy and paste this command into your terminal:"
+    echo ""
+    echo '   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+    echo ""
+    echo "   After installing Homebrew, restart your terminal and run this script again."
+    exit 1
+fi
 
 # Check that venv exists
 if [ ! -d "$SCRIPT_DIR/.venv" ]; then

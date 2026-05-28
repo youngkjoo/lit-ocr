@@ -123,7 +123,20 @@ For each lab member who needs access:
 
 > **Do all of these steps in your terminal.** You won't need the browser again.
 
-### Step 1. Install the Google Cloud CLI
+### Step 1. Install Homebrew & Google Cloud CLI
+
+#### 1. Check & Install Homebrew (If not already installed)
+This script uses Homebrew to manage your local Google Cloud CLI tools.
+
+* **Check if you have it**: Run `which brew` in your terminal. If it prints a path (like `/opt/homebrew/bin/brew`), you are good to go.
+* **If it is NOT installed**: Copy and paste the following command into your terminal to install it:
+  ```bash
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ```
+  *After installation is complete, close and restart your terminal.*
+
+#### 2. Install the Google Cloud CLI
+Once Homebrew is ready, run this command to install the Google Cloud tools:
 
 ```bash
 brew install google-cloud-sdk

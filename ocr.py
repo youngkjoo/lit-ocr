@@ -97,6 +97,15 @@ def run_setup():
     """Interactive first-time configuration."""
     print_header("📋 Google Cloud Document AI — Setup")
 
+    # Check for Homebrew
+    if not shutil.which("brew"):
+        print("⚠️ Homebrew is not installed on this Mac.")
+        print("  Homebrew is required to install the Google Cloud CLI (google-cloud-sdk).")
+        print("  To install it, run this command in your terminal:")
+        print("  /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"")
+        print("  Please install Homebrew and run this setup again.\n")
+        sys.exit(1)
+
     # Check for existing config
     if CONFIG_FILE.exists():
         with open(CONFIG_FILE) as f:
