@@ -3,6 +3,11 @@
 Extract text from scanned PDF books using Google's Document AI.  
 Put a PDF in → get a `.txt` and `.md` file out.
 
+> 📖 **Architectural Context: Why Google Cloud Document AI?**  
+> We evaluated three leading OCR technologies for this project: local **olmOCR** (Allen AI), local **MinerU** (magic-pdf), and **Google Cloud Document AI**. 
+> 
+> To see a detailed breakdown of their architectures, comparative benchmarks (accuracy, speed, math/LaTeX support, compute load, costs, and data privacy), and our decision matrix, check out the [ocr_options_analysis.md](ocr_options_analysis.md) document in this folder.
+
 ---
 
 ## What You Need
