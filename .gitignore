@@ -1,0 +1,35 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Configuration and Credentials (CRITICAL: Do not commit keys or project IDs)
+config.json
+
+# Process Manifest and State
+manifest.json
+
+# Temporary files and PDF chunks
+chunks/
+
+# System Files
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+# User inputs (ignore all PDFs in lit/ except .gitkeep)
+lit/*
+!lit/.gitkeep
+*.pdf
+
+# Large Archive Files
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+
+# Output files (ignore all text/markdown outputs except .gitkeep)
+output/txt/*
+!output/txt/.gitkeep
+output/md/*
+!output/md/.gitkeep
