@@ -6,6 +6,9 @@ ENV/
 # Configuration and Credentials (CRITICAL: Do not commit keys or project IDs)
 config.json
 
+# Local Chat History (not pushed to git)
+chat_history.md
+
 # Process Manifest and State
 manifest.json
 
