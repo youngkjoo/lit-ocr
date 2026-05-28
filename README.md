@@ -270,6 +270,13 @@ Or use the shortcut script (no need to activate the virtual environment):
 ./ocr.sh --all
 ```
 
+> 💡 **Tip: Batch Dry-Run**  
+> Just like with single files, you can preview what would happen during a batch processing run (without actually executing any cloud operations) by appending the `--dry-run` flag:
+> ```bash
+> # Preview processing for all PDFs in the default 'lit/' folder
+> ./ocr.sh --all --dry-run
+> ```
+
 > 💡 **MacBook Users: Prevent Sleep During Long Runs**  
 > Large runs (like `--all`) can take 1–2 hours. If your MacBook goes to sleep or you close the lid, processing will pause.
 >
