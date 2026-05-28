@@ -24,6 +24,7 @@ lit/*
 
 # Large Archive Files
 *.zip
+!lit-ocr-tool.zip
 *.tar.gz
 *.tgz
 *.rar

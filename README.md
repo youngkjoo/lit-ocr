@@ -237,6 +237,13 @@ Before running any OCR commands, copy or move the scanned PDF books you want to 
 
 ### Step 2. Process a Single File
 
+> 💡 **Tip: Run a Dry-Run First!**  
+> Before running actual OCR processing (which takes time and incurs minor cloud costs), you can run any command with the `--dry-run` flag to preview the file, page count, and estimated cost without doing any actual cloud processing:
+> ```bash
+> ./ocr.sh "lit/My Book.pdf" --dry-run
+> ```
+> If the preview table looks correct, proceed to run the actual command below.
+
 ```bash
 cd ~/lit-ocr
 source .venv/bin/activate
