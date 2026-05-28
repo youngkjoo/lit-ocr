@@ -228,29 +228,38 @@ It will test the connections and save everything to `config.json`.
 
 ## Part 3: How to Use
 
-### Quick Start
+### Step 1. Place Your PDF Files
+Before running any OCR commands, copy or move the scanned PDF books you want to process into the **`lit/`** folder inside your project directory (e.g., `~/lit-ocr/lit/`). 
+
+* *Note: The folder contains a `.gitkeep` file so that Git tracks the directory even when it is empty on a fresh setup. This is the default directory where the tool searches for books.*
+
+---
+
+### Step 2. Process a Single File
 
 ```bash
 cd ~/lit-ocr
 source .venv/bin/activate
 
-# Process a single PDF
-python ocr.py "path/to/My Book.pdf"
+# Process a single PDF in your 'lit' folder
+python ocr.py "lit/My Book.pdf"
 ```
 
-Or use the shortcut (no need to activate the virtual environment):
+Or use the shortcut script (no need to activate the virtual environment):
 
 ```bash
-./ocr.sh "path/to/My Book.pdf"
+./ocr.sh "lit/My Book.pdf"
 ```
 
-### Process Multiple Files
+---
+
+### Step 3. Process Multiple Files
 
 ```bash
-# All PDFs in a specific folder
+# Process all PDFs in a custom desktop folder
 ./ocr.sh ~/Desktop/my_scans/
 
-# All PDFs in the default lit/ folder
+# Process all PDFs in the default 'lit/' folder
 ./ocr.sh --all
 ```
 
