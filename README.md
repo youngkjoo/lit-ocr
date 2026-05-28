@@ -171,15 +171,32 @@ gcloud auth application-default set-quota-project YOUR_PROJECT_ID
 
 > **Forgot your Project ID?** Run `gcloud projects list` to see all your projects and their IDs.
 
-### Step 4. Get the OCR Tool
+### Step 4. Get the OCR Tool (Create Folder & Download)
 
-Navigate to where you want the tool and get the files:
+You can get the tool onto your Mac using either of the following two methods:
 
+#### Method A: Clone from Git (Recommended)
+If you have Git access, you can clone the repository directly. This automatically creates the folder structure and downloads all necessary files:
 ```bash
-cd ~/Vibe/lit-ocr
+# 1. Create a directory named 'lit-ocr' in your home folder and navigate into it
+mkdir -p ~/lit-ocr
+cd ~/lit-ocr
+
+# 2. Clone the repository into this folder
+git clone https://github.com/youngkjoo/lit-ocr.git .
 ```
 
-*If you got this from a colleague, just make sure you have the `ocr.py`, `ocr.sh`, and `requirements.txt` files.*
+#### Method B: Unzip from ZIP Package
+If a colleague shared the **`lit-ocr-tool.zip`** package with you:
+```bash
+# 1. Create the project folder and navigate into it
+mkdir -p ~/lit-ocr
+cd ~/lit-ocr
+
+# 2. Unzip the package into the current folder
+# (Assuming the lit-ocr-tool.zip is currently in your Downloads folder)
+unzip ~/Downloads/lit-ocr-tool.zip -d .
+```
 
 ### Step 5. Set Up Python
 
@@ -214,7 +231,7 @@ It will test the connections and save everything to `config.json`.
 ### Quick Start
 
 ```bash
-cd ~/Vibe/lit-ocr
+cd ~/lit-ocr
 source .venv/bin/activate
 
 # Process a single PDF
