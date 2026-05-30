@@ -549,9 +549,18 @@ def download_results(books, config):
                 chunk["text"] = ""
                 continue
 
-            # Parse and concatenate text from all shards (sorted by name)
+            # Parse and concatenate text from all shards (sorted by shard number)
+            def shard_number(blob):
+                """Extract numeric shard index from blob name for proper ordering."""
+                name = blob.name.rsplit(".json", 1)[0]
+                num_str = name.rsplit("-", 1)[-1]
+                try:
+                    return int(num_str)
+                except ValueError:
+                    return 0
+
             chunk_text_parts = []
-            for blob in sorted(json_blobs, key=lambda b: b.name):
+            for blob in sorted(json_blobs, key=shard_number):
                 try:
                     json_content = blob.download_as_text()
                     document = documentai.Document.from_json(json_content)
